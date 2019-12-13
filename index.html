@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="containerRedesEInicio">
+            <div class="redes">
+                <h1>Siguenos en:</h1>
+                <div id="FB" class="facebook">
+                    <h1>F</h1>
+                </div>
+                <div id="TT" class="twitter">
+                    <h1>T</h1>
+                </div>
+                <div id="YT" class="youtube">
+                    <h1>Y</h1>
+                </div>
+            </div>
+
+            <div class="inicio">
+                <h1>Iniciar Sesion</h1>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="containImgMenu">
+                <img src="https://www.bembos.com.pe/skin/frontend/galafoodiris/default/images/bembos_logo.webp" alt="">
+            </div>
+            <div class="containInfoMenu">
+                <div class="infoUno">
+                    <h1>Pedido delivery</h1>
+                    <p>Para mas informacion tienes que registrarte, Lorem ipsum dolor sit. Nesciunt, architecto.
+                    </p>
+                </div>
+
+                <div class="infoDos">
+                    <h1>Bolsa de Compra</h1>
+                    <p>Aca se guardara todo lo que selecciones, Lorem ipsum dolor sit. Repellendus, ducimus?
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="containerCocinaCajero">
+        <div class="cajero">
+            <h1>Cajero</h1>
+        </div>
+        <div class="cocina">
+            <h1>cocina</h1>
+        </div>
+    </div>
+
+    <div class="carritoCompras">
+
+    </div>
+
+    <section>
+
+        <div id="app" class="containerSection">
+
+            <div class="containerMenu">
+                <div @click="showMore(item.id)" v-for="(item, key) in tipoIngredientes" :key="item.id" class="itemsMenu">
+                    <h1 v-html="item.nombre"></h1>
+                </div>
+            </div>
+
+            <div class="containerCocinaPan">
+                <div v-for="(itemI, keyI) in ingreds" :key="itemI.id" class="cardItems">
+                    <div class="imgItem"><img :src="itemI.imagen" alt=""></div>
+                    <hr>
+                    <div class="infoItem">
+                        <h1>{{ itemI.ingrediente }}</h1>
+                        <h3>Tipo:Normal</h3>
+                        <h4>Precio: S/{{ itemI.precio }}</h4>
+                    </div>
+                    <div class="containerPedir">
+                        <div class="cantidad">Stock: {{ itemI.cantidad }}</div>
+                        <div class="pedir">
+                            <button class="btn btnmenos" @click="addToCart">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="containerCocina">
+
+                <div v-for="producto in cart" :key="producto.id" class="containerInfoItemsCocina">
+
+                    <div class="infoCocina">
+                        <h2>Nombre: {{ producto.ingrediente }}</h2>
+                        <h2>Precio:S/{{ producto.precio }}</h2>
+                        <h2>Cantidad:1</h3>
+                    </div>
+                    <div class="estado">
+
+                        <div class="ECS">
+                            <h1>Entrada</h1>
+                            <h1>Cocinando</h1>
+                            <h1>Salida</h1>
+                        </div>
+                        <div class="BTN">
+                            <input type="checkbox" name="" id="">
+                            <input type="checkbox" name="" id="">
+                            <input type="checkbox" name="" id="">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.core.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="ap.js"></script>
+</body>
+
+</html>
