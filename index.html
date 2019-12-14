@@ -33,7 +33,7 @@
             <div class="containImgMenu">
                 <img src="https://www.bembos.com.pe/skin/frontend/galafoodiris/default/images/bembos_logo.webp" alt="">
             </div>
-            <div class="containInfoMenu">
+            <!-- <div class="containInfoMenu">
                 <div class="infoUno">
                     <h1>Pedido delivery</h1>
                     <p>Para mas informacion tienes que registrarte, Lorem ipsum dolor sit. Nesciunt, architecto.
@@ -45,16 +45,13 @@
                     <p>Aca se guardara todo lo que selecciones, Lorem ipsum dolor sit. Repellendus, ducimus?
                     </p>
                 </div>
-            </div>
+            </div> -->
         </div>
     </header>
 
     <div class="containerCocinaCajero">
         <div class="cajero">
             <h1>Cajero</h1>
-        </div>
-        <div class="cocina">
-            <h1>cocina</h1>
         </div>
     </div>
 
@@ -67,7 +64,8 @@
         <div id="app" class="containerSection">
 
             <div class="containerMenu">
-                <div @click="showMore(item.id)" v-for="(item, key) in tipoIngredientes" :key="item.id" class="itemsMenu">
+                <div @click="showMore(item.id)" v-for="(item, key) in tipoIngredientes" :key="item.id"
+                    class="itemsMenu">
                     <h1 v-html="item.nombre"></h1>
                 </div>
             </div>
@@ -84,7 +82,7 @@
                     <div class="containerPedir">
                         <div class="cantidad">Stock: {{ itemI.cantidad }}</div>
                         <div class="pedir">
-                            <button class="btn btnmenos" @click="addToCart">Agregar</button>
+                            <button class="btn btnmenos" @click="addToCart">Llevar al carrito</button>
                         </div>
                     </div>
                 </div>
@@ -92,34 +90,39 @@
 
             <div class="containerCocina">
 
-                <div v-for="producto in cart" :key="producto.id" class="containerInfoItemsCocina">
+                    <div v-for="producto in cart" :key="producto.id" class="containerInfoItemsCocina">
 
-                    <div class="infoCocina">
-                        <h2>Nombre: {{ producto.ingrediente }}</h2>
-                        <h2>Precio:S/{{ producto.precio }}</h2>
-                        <h2>Cantidad:1</h3>
-                    </div>
-                    <div class="estado">
-
-                        <div class="ECS">
-                            <h1>Entrada</h1>
-                            <h1>Cocinando</h1>
-                            <h1>Salida</h1>
+                        <div class="infoCocina">
+                            <div class="separar">
+                                <h2>Nombre: {{ producto.ingrediente }}</h2>
+                            </div>
+                            <div class="separar">
+                                <h2>Precio:S/{{ producto.precio }}</h2>
+                            </div>
+                            <div class="separar">
+                                <h2>Cantidad:1</h3>
+                            </div>
                         </div>
-                        <div class="BTN">
-                            <input type="checkbox" name="" id="">
-                            <input type="checkbox" name="" id="">
-                            <input type="checkbox" name="" id="">
-                        </div>
+                        <div class="estado">
 
+                            <div class="ECS">
+                                <h1>Entrada</h1>
+                                <h1>Cocinando</h1>
+                                <h1>Salida</h1>
+                            </div>
+                            <div class="BTN">
+                                <input type="checkbox" name="" id="">
+                                <input type="checkbox" name="" id="">
+                                <input type="checkbox" name="" id="">
+                            </div>
+
+                        </div>
                     </div>
-                </div>
             </div>
-
         </div>
 
     </section>
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.core.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
